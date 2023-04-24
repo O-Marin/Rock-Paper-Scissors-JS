@@ -7,6 +7,8 @@ function getComputerChoice(){
 }
 
 function playRPS(playerSelection, computerSelection){
+
+
     
     beats = {'paper':'rock', 'rock':'scissors', "scissors":'paper'}
     if (playerSelection == beats[computerSelection])
@@ -18,15 +20,23 @@ function playRPS(playerSelection, computerSelection){
     
 }
 
-let pick = prompt("Please select an option");
-let playerSelection = pick.toLowerCase();
+function game(){
+    for(i = 0 ; i<= 5 ; i++){
+        console.log(i)
+        let pick = prompt("Please select an option");
+        let playerSelection = pick.toLowerCase();
 
-while (playerSelection != "rock" && playerSelection != "scissors" && playerSelection != "paper")
-    pick = prompt("please enter a valid option")
+        while (playerSelection != "rock" && playerSelection != "scissors" && playerSelection != "paper")
+            pick = prompt("please enter a valid option")
+            playerSelection = pick.toLowerCase();
 
-playerSelection = pick.toLowerCase();
-computerSelection = getComputerChoice();
+        
+        computerSelection = getComputerChoice();
+        
+        console.log(playRPS(playerSelection,computerSelection))
+        
+    }
+}
 
 
-
-console.log(playRPS(playerSelection, computerSelection));
+console.log(game())
